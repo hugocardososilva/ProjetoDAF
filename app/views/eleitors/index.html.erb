@@ -1,0 +1,34 @@
+<h1>Listing eleitors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Titulo</th>
+      <th>Endereco</th>
+      <th>Telefone</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eleitors.each do |eleitor| %>
+      <tr>
+        <td><%= eleitor.nome %></td>
+        <td><%= eleitor.titulo %></td>
+        <td><%= eleitor.endereco %></td>
+        <td><%= eleitor.telefone %></td>
+        <td><%= eleitor.email %></td>
+        <td><%= link_to 'Show', eleitor %></td>
+        <td><%= link_to 'Edit', edit_eleitor_path(eleitor) %></td>
+        <td><%= link_to 'Destroy', eleitor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+     <%= paginate @eleitors %>
+
+<br>
+
+<%= link_to 'New Eleitor', new_eleitor_path %>

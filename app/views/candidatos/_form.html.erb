@@ -1,0 +1,32 @@
+<%= form_for(@candidato) do |f| %>
+  <% if @candidato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@candidato.errors.count, "error") %> prohibited this candidato from being saved:</h2>
+
+      <ul>
+      <% @candidato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numero %><br>
+    <%= f.number_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+ <div class="field">
+    <%= f.label :partido_id %><br>
+     <%= f.collection_select(:partido_id ,
+    Partido.order(:numero),:id, :sigla) %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

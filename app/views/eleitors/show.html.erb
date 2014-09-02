@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @eleitor.nome %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @eleitor.titulo %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @eleitor.endereco %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @eleitor.telefone %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @eleitor.email %>
+</p>
+
+<%= link_to 'Edit', edit_eleitor_path(@eleitor) %> |
+<%= link_to 'Back', eleitors_path %>

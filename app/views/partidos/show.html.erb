@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @partido.numero %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @partido.nome %>
+</p>
+
+<p>
+  <strong>Sigla:</strong>
+  <%= @partido.sigla %>
+</p>
+
+<%= link_to 'Edit', edit_partido_path(@partido) %> |
+<%= link_to 'Back', partidos_path %>
